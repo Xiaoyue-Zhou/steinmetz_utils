@@ -1,4 +1,6 @@
 import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 
 
 def align_to_gocue(spks: np.ndarray, gocues: np.ndarray, bins=100) -> np.ndarray: # spks: ( 734, 214, 250 )
@@ -29,3 +31,11 @@ def split_to_regions(data: np.ndarray, regions: np.ndarray) -> dict:
         data_dict.update({name: data[idxs]})
 
     return data_dict
+
+
+
+def timecourse_3d(timecourse: np.ndarray) -> None:
+    fig = plt.figure(figsize=(8, 8))
+    ax = fig.add_subplot(111, projection='3d')
+
+    ax.plot(*timecourse)
