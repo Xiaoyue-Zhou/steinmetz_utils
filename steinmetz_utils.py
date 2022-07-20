@@ -39,3 +39,8 @@ def timecourse_3d(timecourse: np.ndarray) -> None:
     ax = fig.add_subplot(111, projection='3d')
 
     ax.plot(*timecourse)
+    
+    
+    
+def noname():
+    return 0
